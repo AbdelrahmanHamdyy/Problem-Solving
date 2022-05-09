@@ -1,32 +1,20 @@
-#include <iostream>
-#include <stdlib.h>
-#include <algorithm>
-#include <vector>
-#include <string>
-#include <string.h>
-#include <cmath>
-#include <ctype.h>
-#include <conio.h>
-#include <stdio.h>
-#include <cstdlib>
-#include <ctime>
+#include <bits/stdc++.h>
+#define init ios_base::sync_with_stdio(0); cin.tie(0); cout.tie(0);
+typedef long long ll;
 using namespace std;
 
 int main() {
-	int n; // Number of Participants
-	int k; // Postion
-	cin >> n >> k;
-	int* arr = new int[n];
+	init;
+	// Code
+	int n, k; cin >> n >> k;
+	vector<int> v(n);
 	for (int i = 0; i < n; i++)
-	{
-		cin >> arr[i];
-	}
-	int kscore = arr[k - 1];
+		cin >> v[i];
 	int count = 0;
-	for (int i = 0; i < n; i++)
-	{
-		if (arr[i] > 0 && arr[i] >= kscore)
+	for (int i = 0; i < n; i++) {
+		if (v[i] >= v[k - 1] && v[i] > 0)
 			count++;
 	}
-	cout << count << endl;
+	cout << count;
+	return 0;
 }

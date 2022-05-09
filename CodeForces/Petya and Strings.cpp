@@ -1,42 +1,18 @@
-#include <iostream>
-#include <stdlib.h>
-#include <algorithm>
-#include <vector>
-#include <string>
-#include <sstream>
-#include <string.h>
-#include <cmath>
-#include <ctype.h>
-#include <cstdio>
-#include <stdio.h>
-#include <cstdlib>
-#include <conio.h>
-#include <ctime>
+#include <bits/stdc++.h>
+#define init ios_base::sync_with_stdio(0); cin.tie(0); cout.tie(0);
+typedef long long ll;
 using namespace std;
 
 int main() {
-	string s1, s2;
-	cin >> s1;
-	cin >> s2;
-	int sum1, sum2, n;
-	sum1 = 0;
-	sum2 = 0;
-	for (int i = 0; i < s1.size(); i++) {
-		s1[i] = tolower(s1[i]);
-		s2[i] = tolower(s2[i]);
-		sum1 += int(s1[i]);
-		sum2 += int(s2[i]);
-	}
-	if (sum1 < sum2) {
-		n = -1;
-		cout << n << endl;
-	}
-	else if (sum1 > sum2) {
-		n = 1;
-		cout << n << endl;
-	}
-	else {
-		n = 0;
-		cout << n << endl;
-	}
+	init;
+	// Code
+	char s1[1000], s2[1000];
+	cin >> s1 >> s2;
+	if (_strcmpi(s1, s2) > 0)
+		cout << "1";
+	else if (_strcmpi(s1, s2) < 0)
+		cout << "-1";
+	else
+		cout << "0";
+	return 0;
 }
